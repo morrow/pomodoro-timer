@@ -1,0 +1,142 @@
+body {
+  font-family:monaco;
+  background:#eee;
+  font-size:16px;
+  transition: background 0.25s linear;
+}
+
+body.work {
+  background:orangered;
+}
+
+body.work #mode {
+  color:orangered;
+}
+
+body.short_break #mode {
+  color:rgb(0,200,0);
+}
+
+body.short_break {
+  background: rgb(0,200,0);
+}
+
+h1, h2, h3, h4, h5 {
+  padding:0;
+  margin: 0;
+}
+
+header {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#mode {
+  font-weight: bold;
+  font-size:1.5em;
+}
+
+#time_remaining {
+  background:#eee;
+  padding:0.2em 0.4em;
+}
+
+button {
+  margin: 0.2em;
+  background:#eee;
+  border:1px solid #ccc;
+  font-size:1.5em;
+  font-family: monaco;
+  cursor: pointer;
+}
+
+button:hover {
+  background:#ccc;
+}
+
+#wrap {
+  width:900px;
+  margin:2em auto;
+}
+
+main {
+  background:white;
+  padding:2em;
+}
+
+#logo {
+  font-size:1.75em;
+  opacity:0.3;
+}
+
+#status {
+  background: white;
+  padding:1em;
+  font-size:1.75em;
+}
+
+#task {
+  padding:0.2em;
+  font-family:monaco;
+  font-size:1.5em;
+  text-align: center;
+  border:none;
+  border-bottom:1px solid #ccc;
+  width:250px;
+}
+
+#display {
+  margin:1em;
+  font-size:3em;
+}
+
+.timer {
+  margin:1em 0;
+  border:1px dashed #ccc;
+  padding:1em;
+}
+
+#current-timer .timer {
+  border:1px solid #000;
+}
+
+.timer * {
+  display: inline-block;
+  margin:0 1em;
+}
+
+.timer .time-remaining {
+  padding:0.5em;
+  background:#eee;
+}
+
+.timer .task {
+  padding:0.5em 0.75em;
+  color:white;
+  min-width:130px;
+  text-align: center;
+}
+
+.timer[data-mode=work] .task {
+  background:orangered;
+}
+
+.timer[data-mode=short_break] .task {
+  background:rgb(0,200,0);
+}
+
+.timer[data-state=ended] {
+  color:#666;
+}
+
+.timer[data-state=ended] .task {
+  background:transparent;
+}
+
+.timer[data-state=ended][data-mode=work] .task {
+  color:orangered;
+}
+
+.timer[data-state=ended][data-mode=short_break] .task {
+  color:rgb(0,200,0);
+}
