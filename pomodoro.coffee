@@ -1,9 +1,9 @@
 class Timer
 
   DURATIONS:
-    work: 0.2
-    long_break: 0.1
-    short_break: 0.1
+    work: 25
+    long_break: 10
+    short_break: 5
 
   constructor: (mode, task='')->
     @mode = mode

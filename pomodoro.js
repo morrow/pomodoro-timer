@@ -3,9 +3,9 @@ var Pomodoro, Timer;
 
 Timer = (function() {
   Timer.prototype.DURATIONS = {
-    work: 0.2,
-    long_break: 0.1,
-    short_break: 0.1
+    work: 25,
+    long_break: 10,
+    short_break: 5
   };
 
   function Timer(mode, task) {
