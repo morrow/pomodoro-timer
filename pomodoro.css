@@ -1,5 +1,9 @@
+@import url(/fonts/inherit/stylesheet.css);
+@import url(/fonts/droid-sans/regular/stylesheet.css);
+@import url(/fonts/droid-sans/bold/stylesheet.css);
+
 body {
-  font-family:monaco;
+  font-family:'droid sans';
   background:#eee;
   font-size:16px;
   transition: background 0.25s linear;
@@ -31,28 +35,29 @@ header {
   text-align: center;
 }
 
-#mode {
-  font-weight: bold;
-  font-size:1.5em;
-}
-
-#time_remaining {
-  background:#eee;
-  padding:0.2em 0.4em;
-}
-
 button {
-  margin: 0.2em;
   background:#eee;
-  border:1px solid #ccc;
-  font-size:1.5em;
-  font-family: monaco;
+  border:1px outset #ccc;
+  font-size:1em;
+  border-radius: 3px;
+  font-family: inherit;
   cursor: pointer;
 }
 
 button:hover {
   background:#ccc;
 }
+
+#mode {
+  font-weight: bold;
+  font-size:1.25em;
+}
+
+#time_remaining {
+  background:whiteSmoke;
+  padding:0.1em 0.2em;
+}
+
 
 #wrap {
   width:900px;
@@ -71,22 +76,35 @@ main {
 
 #status {
   background: white;
-  padding:1em;
-  font-size:1.75em;
+  padding:1em 0 0 0;
+  font-size:2em;
 }
 
 #task {
   padding:0.2em;
-  font-family:monaco;
+  font-family:inherit;
   font-size:1.5em;
   text-align: center;
   border:none;
   border-bottom:1px solid #ccc;
-  width:250px;
+  width:300px;
+  margin-right:1em;
+}
+
+#controls {
+  margin:1em;
+}
+
+#controls label {
+  margin-left:1.5em;
+}
+
+#controls button {
+  margin:0.5em;
 }
 
 #display {
-  margin:1em;
+  margin:0.2em;
   font-size:3em;
 }
 
