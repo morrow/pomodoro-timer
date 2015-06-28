@@ -20,6 +20,8 @@
           <label for='notifications'>Notifications: </label>
           <input id='notifications' name='notifications' type='checkbox' checked/>
         </div>
+        <h2>To-Do List</h2>
+        <div id='todo'></div>
         <h2>Timer</h2>
         <div id='current-timer'></div>
         <h2>History</h2>
@@ -31,4 +33,5 @@
   <script type='text/javascript' src='jquery-2.1.4.min.js'></script>
   <script type='text/javascript' src='pomodoro.js'></script>
   <script type='text/javascript'>$(document).ready(function(){ window.pomodoro = new Pomodoro(); });</script>
+  <script type='text/javascript'>$(document).ready(function(){ window.todo = new TodoList(); });</script>
 </html>

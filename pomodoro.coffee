@@ -43,11 +43,13 @@ class Timer
     @pause_started_at = (new Date()).getTime()
 
   reset: ->
+    $('#task').val ''
     @stateChange 'reset'
     @started_at = null
     @pause_started_at = false
     @pause_duration = 0
     delete window.localStorage['starting_time']
+    delete window.localStorage['task']
 
   calculateTime: ->
     if !! @started_at
@@ -68,6 +70,7 @@ class Timer
       seconds = Math.round((time / 1000 % 60)).toString()
       minutes = "0#{minutes}" if parseInt(minutes) < 10
       seconds = "0#{seconds}" if parseInt(seconds) < 10
+      seconds = "00" unless seconds
       @time_remaining = "#{minutes}:#{seconds}"
       window.pomodoro.render() if window.pomodoro
 
@@ -138,7 +141,6 @@ class Pomodoro
         body: "#{timer.time_remaining} of #{@current_mode} begins now."
         icon: "/time.jpg"
       window.setTimeout(n.close.bind(n), 3000)
-
 
   render: ->
     $('body')[0].className = "#{@current_mode} #{@getCurrentTimer().state}"

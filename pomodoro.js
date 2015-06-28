@@ -68,11 +68,13 @@ Timer = (function() {
   };
 
   Timer.prototype.reset = function() {
+    $('#task').val('');
     this.stateChange('reset');
     this.started_at = null;
     this.pause_started_at = false;
     this.pause_duration = 0;
-    return delete window.localStorage['starting_time'];
+    delete window.localStorage['starting_time'];
+    return delete window.localStorage['task'];
   };
 
   Timer.prototype.calculateTime = function() {
@@ -100,6 +102,9 @@ Timer = (function() {
       }
       if (parseInt(seconds) < 10) {
         seconds = "0" + seconds;
+      }
+      if (!seconds) {
+        seconds = "00";
       }
       this.time_remaining = minutes + ":" + seconds;
       if (window.pomodoro) {
