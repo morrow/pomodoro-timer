@@ -38,6 +38,9 @@ Timer = (function() {
   };
 
   Timer.prototype.start = function() {
+    if (this.state === 'started' || this.state === 'ended') {
+      return false;
+    }
     this.stateChange('started');
     if (!this.started_at) {
       this.started_at = (new Date).getTime();

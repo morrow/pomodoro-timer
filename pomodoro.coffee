@@ -25,6 +25,7 @@ class Timer
     $('#mode').html( @mode.replace(/_/g, ' ') )
 
   start: ->
+    return false if @state is 'started' or @state is 'ended'
     @stateChange('started')
     @started_at = (new Date).getTime() unless @started_at
     if window.localStorage['started_at']
